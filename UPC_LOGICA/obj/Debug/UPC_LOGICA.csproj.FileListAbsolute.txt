@@ -25,3 +25,12 @@ C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_LOGICA\bin\Debug\UPC_ENTIDADES
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_LOGICA\obj\Debug\UPC_LOGICA.csprojResolveAssemblyReference.cache
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_LOGICA\obj\Debug\UPC_LOGICA.dll
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_LOGICA\obj\Debug\UPC_LOGICA.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\bin\Debug\UPC_LOGICA.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\bin\Debug\UPC_LOGICA.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\bin\Debug\UPC_DATOS.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\bin\Debug\UPC_ENTIDADES.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\bin\Debug\UPC_DATOS.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\bin\Debug\UPC_ENTIDADES.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\obj\Debug\UPC_LOGICA.csprojResolveAssemblyReference.cache
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\obj\Debug\UPC_LOGICA.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_LOGICA\obj\Debug\UPC_LOGICA.pdb

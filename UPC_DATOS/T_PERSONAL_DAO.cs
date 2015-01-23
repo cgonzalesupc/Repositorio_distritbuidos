@@ -41,6 +41,35 @@ namespace UPC_DATOS
            }
        }
 
+       public DataSet ObtenerListado(int codigo)
+       {
+           using (SqlCommand dbCmd = new SqlCommand("sps_obtenerUno_Personal", SqlClientUPC))
+           {
+               SqlClientUPC.Open();
+               DataSet dsOrl = new DataSet();
+
+               try
+               {
+                   
+                   dbCmd.CommandType = CommandType.StoredProcedure;
+                   dbCmd.Parameters.Add("@ID_PERSONAL", SqlDbType.VarChar).Value = codigo;
+                   SqlDataAdapter daOrl = new SqlDataAdapter(dbCmd);
+                   daOrl.Fill(dsOrl);
+               }
+               catch (Exception ex)
+               {
+                   throw ex;
+               }
+               finally
+               {
+                   SqlClientUPC.Close();
+                   SqlClientUPC.Dispose();
+                   dbCmd.Dispose();
+               }
+               return dsOrl;
+           }
+       }
+
        public int Insert(T_PERSONAL oBEGeneral)
        {
            using (SqlCommand dbCmd = new SqlCommand("SPI_NUEVO_PERSONA", SqlClientUPC))
@@ -64,6 +93,52 @@ namespace UPC_DATOS
                    dbCmd.Parameters.Add("@DEPARTAMENTO", SqlDbType.VarChar).Value = _Be.departamento;
                    dbCmd.Parameters.Add("@PROVINCIA", SqlDbType.VarChar).Value = _Be.provincia;
                    dbCmd.Parameters.Add("@DISTRITO", SqlDbType.VarChar).Value = _Be.distrito;
+
+                   dbCmd.ExecuteNonQuery();
+                   trans.Commit();
+
+                   return 0;
+               }
+               catch (Exception ex)
+               {
+                   trans.Rollback();
+                   throw ex;
+               }
+               finally
+               {
+                   SqlClientUPC.Close();
+                   SqlClientUPC.Dispose();
+                   trans.Dispose();
+                   dbCmd.Dispose();
+               }
+           }
+       }
+
+
+       public int Update(T_PERSONAL oBEGeneral)
+       {
+           using (SqlCommand dbCmd = new SqlCommand("SPU_ACTUALIZAR_PERSONA", SqlClientUPC))
+           {
+               SqlClientUPC.Open();
+               SqlTransaction trans = SqlClientUPC.BeginTransaction(IsolationLevel.ReadCommitted);
+
+               try
+               {
+                   T_PERSONAL _Be = (T_PERSONAL)oBEGeneral;
+                   dbCmd.Transaction = trans;
+                   dbCmd.CommandType = CommandType.StoredProcedure;
+                   dbCmd.Parameters.Add("@NOMBRE", SqlDbType.VarChar).Value = _Be.nombre;
+                   dbCmd.Parameters.Add("@PATERNO", SqlDbType.VarChar).Value = _Be.ape_paterno;
+                   dbCmd.Parameters.Add("@MATERNO", SqlDbType.VarChar).Value = _Be.ape_materno;
+                   dbCmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = _Be.direccion;
+                   dbCmd.Parameters.Add("@EST_CIVIL", SqlDbType.VarChar).Value = _Be.estado_civil;
+                   dbCmd.Parameters.Add("@NRO_DOCUMENTO", SqlDbType.Int).Value = _Be.nro_documento;
+                   dbCmd.Parameters.Add("@SEXO", SqlDbType.VarChar).Value = _Be.sexo;
+                   dbCmd.Parameters.Add("@NACIONALIDAD", SqlDbType.VarChar).Value = _Be.des_nacionalidad;
+                   dbCmd.Parameters.Add("@DEPARTAMENTO", SqlDbType.VarChar).Value = _Be.departamento;
+                   dbCmd.Parameters.Add("@PROVINCIA", SqlDbType.VarChar).Value = _Be.provincia;
+                   dbCmd.Parameters.Add("@DISTRITO", SqlDbType.VarChar).Value = _Be.distrito;
+                   dbCmd.Parameters.Add("@ID_PERSONAL", SqlDbType.VarChar).Value = _Be.id_trabajador;
 
                    dbCmd.ExecuteNonQuery();
                    trans.Commit();

@@ -1,0 +1,4 @@
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\WcfService1\bin\WcfService1.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\WcfService1\bin\WcfService1.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\WcfService1\obj\Debug\WcfService1.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\WcfService1\obj\Debug\WcfService1.pdb

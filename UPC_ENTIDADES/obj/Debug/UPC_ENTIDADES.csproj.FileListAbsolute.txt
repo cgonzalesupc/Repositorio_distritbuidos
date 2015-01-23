@@ -6,3 +6,7 @@ C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_ENTIDADES\bin\Debug\UPC_ENTIDA
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_ENTIDADES\bin\Debug\UPC_ENTIDADES.pdb
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_ENTIDADES\obj\Debug\UPC_ENTIDADES.dll
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_ENTIDADES\obj\Debug\UPC_ENTIDADES.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_ENTIDADES\bin\Debug\UPC_ENTIDADES.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_ENTIDADES\bin\Debug\UPC_ENTIDADES.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_ENTIDADES\obj\Debug\UPC_ENTIDADES.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_ENTIDADES\obj\Debug\UPC_ENTIDADES.pdb

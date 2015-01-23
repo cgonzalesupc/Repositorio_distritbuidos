@@ -19,3 +19,10 @@ C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_DATOS\bin\Debug\UPC_ENTIDADES.
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_DATOS\obj\Debug\UPC_DATOS.csprojResolveAssemblyReference.cache
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_DATOS\obj\Debug\UPC_DATOS.dll
 C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_DATOS\obj\Debug\UPC_DATOS.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\bin\Debug\UPC_DATOS.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\bin\Debug\UPC_DATOS.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\bin\Debug\UPC_ENTIDADES.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\bin\Debug\UPC_ENTIDADES.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\obj\Debug\UPC_DATOS.csprojResolveAssemblyReference.cache
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\obj\Debug\UPC_DATOS.dll
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DATOS\obj\Debug\UPC_DATOS.pdb
