@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs"
+    Inherits="MTC_MOREC.Master.MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.Extensions" Namespace="System.Web.UI" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link href="../Styles/EstiloPrincipal.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image: url('../Imagenes/punto.jpg'); vertical-align: top;
+    margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; background-color: #d7d6d6;
+    font-family: Arial; font-size: 10pt;position: absolute;width: 100%; height: 100%;">
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;
+            left: 0px;  background-repeat: repeat-x;
+            position: absolute; top: 0px;">
+            <tr>
+                <td align="center" valign="top">
+                    
+                    <table border="0" cellpadding="0" cellspacing="0" width="940px">
+                        <tr>
+                            <td style="background-image: url('../Imagenes/cabecera.png'); background-repeat: no-repeat;
+                                text-align: right; height: 200px; width: 940px;" valign="top">
+                                <table style="width: 100%; height: 100%;">
+                                    <tr>
+                                        <td width="50%">
+                                            <asp:ScriptManager ID="ScriptManager" runat="server" EnableScriptGlobalization="True"
+                                                EnablePageMethods="true">
+                                            </asp:ScriptManager>
+                                        </td>
+                                        <td align="right" valign="top" width="50%">
+                                            <asp:UpdatePanel ID="PanelSession" runat="server">
+                                                <ContentTemplate>
+                                                    &nbsp; &nbsp; &nbsp;
+                                                    <asp:ImageButton ID="btnCerrar" runat="server" ImageUrl="~/Imagenes/btnLogOut.png"
+                                                        AlternateText="Cerrar Sesión" OnClick="btnCerrar_Click" />
+                                                    &nbsp; &nbsp;
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                                 <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                    <tr id="menu_session" runat="server">
+                                        <td style="width: 100%; height: 100%; padding-left: 11px;">
+                                            <asp:Menu ID="mOpciones" runat="server" BackColor="#D2D1D1" BorderStyle="None" CssClass="menu"
+                                                DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666"
+                                                Orientation="Horizontal" StaticSubMenuIndent="8px" StaticEnableDefaultPopOutImage="false" >
+                                                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                                <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                                                <DynamicMenuStyle BackColor="#D2D1D1" />
+                                                <DynamicSelectedStyle BackColor="#D2D1D1" Font-Names="Verdana" Font-Size="0.8em"
+                                                    ForeColor="#666666" />
+                                                <DynamicMenuItemStyle CssClass="textOriginalNotBold3" HorizontalPadding="5px" VerticalPadding="2px" />
+                                                <Items>
+                                                    <asp:MenuItem Text="INICIO" Value="INICIO"></asp:MenuItem>
+                                                    <asp:MenuItem Text="PERSONAL" Value="PERSONAL">
+                                                        <asp:MenuItem Text="REGISTRO PERSONAL" Value="RPERSONAL" 
+                                                            NavigateUrl="~/FrmListadoPersonal.aspx"></asp:MenuItem>
+                                                    </asp:MenuItem>
+                                                </Items>
+                                                <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                                            </asp:Menu>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- CONTENIDO DE BIENVENIDO-->
+                             <table  style="text-align:center;margin-left: 15px; margin-right: 15px; width: 97%">
+                               <tr>
+                                    <td style="background-color:White;
+                                      text-align:center"  
+                                    valign="top">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                                    </asp:ContentPlaceHolder>
+                               
+                                    </td>
+                                </tr>
+                                 <tr>
+                            <td style="background-image: url('../Imagenes/repeat_STD.png'); background-repeat: repeat;
+                                height: 10px;" valign="top">
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                          <ContentTemplate>
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" align="center">
+                                    <tr>
+                                    
+                                        <td align="left" style="padding-left: 10px; padding-right: 10px; width: 40%; background-color: rgb(210, 209, 209);">
+                                            <asp:Label ID="lblUsuario" runat="server" CssClass="titNormal" Font-Bold="False"></asp:Label>
+                                        </td>
+                                        
+                                        <td align="right" style="padding-left: 10px; padding-right: 10px; width: 40%; background-color: rgb(210, 209, 209);">
+                                            &nbsp;</td>
+                                     
+                                    </tr>
+                                </table>
+                                 </ContentTemplate>
+                               </asp:UpdatePanel>
+                            </td>
+                        </tr>
+                             </table>
+                             <!-- div para PAGINAS DE PIE-->
+                          
+                           
+                          
+                        
+
+                            </td>
+                        </tr>
+                       
+
+                     
+                       
+                        <!-- HDEN PARA RECUPERAR LOS ID DEL LOGUEO -->
+                        
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+            
+            <!-- la caja de  login -->
+            
+             
+        </table>
+    </div>
+    </form>
+</body>
+</html>

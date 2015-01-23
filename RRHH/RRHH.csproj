@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{108674E3-E23F-4F4A-B0CB-DEEEB6022569}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRHH</RootNamespace>
+    <AssemblyName>RRHH</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\cgonzales\Documents\Backup_Morec\MTC_MOREC - ULTIMO\MTC_MOREC\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="FOTOS\46648294.JPG" />
+    <Content Include="FOTOS\46648295.JPG" />
+    <Content Include="FOTOS\46648296.JPG" />
+    <Content Include="FOTOS\46648297.JPG" />
+    <Content Include="FOTOS\23456851.JPG" />
+    <Content Include="FOTOS\23456852.JPG" />
+    <Content Include="FOTOS\23456853.JPG" />
+    <Content Include="FOTOS\23456858.JPG" />
+    <Content Include="FOTOS\23456859.JPG" />
+    <Content Include="FOTOS\23456861.JPG" />
+    <Content Include="FOTOS\23456862.JPG" />
+    <Content Include="FOTOS\23456866.JPG" />
+    <Content Include="FOTOS\23456871.JPG" />
+    <Content Include="FOTOS\23456873.JPG" />
+    <Content Include="FOTOS\23456874.JPG" />
+    <Content Include="FOTOS\23456878.JPG" />
+    <Content Include="FOTOS\23456882.JPG" />
+    <Content Include="FOTOS\23456883.JPG" />
+    <Content Include="FOTOS\23456885.JPG" />
+    <Content Include="FOTOS\23456891.JPG" />
+    <Content Include="FOTOS\23456895.JPG" />
+    <Content Include="FOTOS\23456900.JPG" />
+    <Content Include="FOTOS\23456905.JPG" />
+    <Content Include="FOTOS\23456917.JPG" />
+    <Content Include="FOTOS\23456929.JPG" />
+    <Content Include="FOTOS\23456930.JPG" />
+    <Content Include="FOTOS\23456931.JPG" />
+    <Content Include="FOTOS\23456932.JPG" />
+    <Content Include="FOTOS\23456934.JPG" />
+    <Content Include="FOTOS\23456936.JPG" />
+    <Content Include="FOTOS\23456937.JPG" />
+    <Content Include="FOTOS\23456938.JPG" />
+    <Content Include="FOTOS\23456940.JPG" />
+    <Content Include="FOTOS\23456943.JPG" />
+    <Content Include="FOTOS\23456976.JPG" />
+    <Content Include="FOTOS\23456980.JPG" />
+    <Content Include="FOTOS\23456984.JPG" />
+    <Content Include="FOTOS\23456985.JPG" />
+    <Content Include="FOTOS\23456986.JPG" />
+    <Content Include="FOTOS\23456988.JPG" />
+    <Content Include="FOTOS\23456991.JPG" />
+    <Content Include="FOTOS\23457001.JPG" />
+    <Content Include="FOTOS\23457002.jpg" />
+    <Content Include="FOTOS\23457008.jpg" />
+    <Content Include="FOTOS\23457010.JPG" />
+    <Content Include="FOTOS\23457011.jpg" />
+    <Content Include="FOTOS\23457015.JPG" />
+    <Content Include="FOTOS\23457017.JPG" />
+    <Content Include="FOTOS\23457018.jpg" />
+    <Content Include="FOTOS\23457019.JPG" />
+    <Content Include="FOTOS\23457022.jpg" />
+    <Content Include="FOTOS\23457024.JPG" />
+    <Content Include="FOTOS\29245305.JPG" />
+    <Content Include="FrmInicio.aspx" />
+    <Content Include="FrmListadoPersonal.aspx" />
+    <Content Include="FrmLogueo.aspx" />
+    <Content Include="Imagenes\Botones\Aceptar_03.png" />
+    <Content Include="Imagenes\Botones\archivar_03.png" />
+    <Content Include="Imagenes\Botones\asignar_03.png" />
+    <Content Include="Imagenes\Botones\borrador_03.png" />
+    <Content Include="Imagenes\Botones\BUSCAR_03.png" />
+    <Content Include="Imagenes\Botones\cancelar_03.png" />
+    <Content Include="Imagenes\Botones\cerrar_03.png" />
+    <Content Include="Imagenes\Botones\derivar_03.png" />
+    <Content Include="Imagenes\Botones\desasignar_03.png" />
+    <Content Include="Imagenes\Botones\duplicar_03.png" />
+    <Content Include="Imagenes\Botones\emitir-cargo_03.png" />
+    <Content Include="Imagenes\Botones\finalizar_03.png" />
+    <Content Include="Imagenes\Botones\Imprimir_cargo.png" />
+    <Content Include="Imagenes\Botones\notificar_03.png" />
+    <Content Include="Imagenes\Botones\nuevo_03.png" />
+    <Content Include="Imagenes\Botones\recepcionar_03.png" />
+    <Content Include="Imagenes\Botones\sincronizar_03.png" />
+    <Content Include="Imagenes\Botones\solicitarNotificacion_03.png" />
+    <Content Include="Imagenes\btnBack.png" />
+    <Content Include="Imagenes\btnCalendar.png" />
+    <Content Include="Imagenes\btnClear.png" />
+    <Content Include="Imagenes\btnClose.png" />
+    <Content Include="Imagenes\btnDelete.png" />
+    <Content Include="Imagenes\btnDetail.png" />
+    <Content Include="Imagenes\btnDown.png" />
+    <Content Include="Imagenes\btnEdit.png" />
+    <Content Include="Imagenes\btnExcel.png" />
+    <Content Include="Imagenes\btnHome.png" />
+    <Content Include="Imagenes\btnLogOut.png" />
+    <Content Include="Imagenes\btnLug.png" />
+    <Content Include="Imagenes\btnMas.png" />
+    <Content Include="Imagenes\btnNew.gif" />
+    <Content Include="Imagenes\btnNext.png" />
+    <Content Include="Imagenes\btnOff.png" />
+    <Content Include="Imagenes\btnOn.png" />
+    <Content Include="Imagenes\btnPassword.png" />
+    <Content Include="Imagenes\btnPdf.png" />
+    <Content Include="Imagenes\btnPrint.png" />
+    <Content Include="Imagenes\btnRefresh.png" />
+    <Content Include="Imagenes\btnSearch.gif" />
+    <Content Include="Imagenes\btnSelect.gif" />
+    <Content Include="Imagenes\btnStart.png" />
+    <Content Include="Imagenes\btnStop.png" />
+    <Content Include="Imagenes\btnSubMenu.png" />
+    <Content Include="Imagenes\btnUP.png" />
+    <Content Include="Imagenes\btnUpdate.png" />
+    <Content Include="Imagenes\btn_Download.png" />
+    <Content Include="Imagenes\btn_STD.jpg" />
+    <Content Include="Imagenes\cabecera.png" />
+    <Content Include="Imagenes\cambiarDato.png" />
+    <Content Include="Imagenes\close_grey.png" />
+    <Content Include="Imagenes\ErrorImage.jpg" />
+    <Content Include="Imagenes\first.gif" />
+    <Content Include="Imagenes\head_repeater.png" />
+    <Content Include="Imagenes\icon_seguridad.png" />
+    <Content Include="Imagenes\icon_user.png" />
+    <Content Include="Imagenes\last.gif" />
+    <Content Include="Imagenes\loading.gif" />
+    <Content Include="Imagenes\login_STD1.jpg" />
+    <Content Include="Imagenes\MTC.jpg" />
+    <Content Include="Imagenes\next.gif" />
+    <Content Include="Imagenes\pie_de_pagina_STD.png" />
+    <Content Include="Imagenes\previous.gif" />
+    <Content Include="Imagenes\punto.jpg" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\EstiloPrincipal.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReference1\RRHH.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\RRHH.ServiceReference1.Personal_RENIEC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.aspx.cs">
+      <DependentUpon>FrmInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.aspx.designer.cs">
+      <DependentUpon>FrmInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoPersonal.aspx.cs">
+      <DependentUpon>FrmListadoPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmListadoPersonal.aspx.designer.cs">
+      <DependentUpon>FrmListadoPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogueo.aspx.cs">
+      <DependentUpon>FrmLogueo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmLogueo.aspx.designer.cs">
+      <DependentUpon>FrmLogueo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPC_DATOS\UPC_DATOS.csproj">
+      <Project>{D300115E-1011-4318-9D33-4AF8D74CEB9D}</Project>
+      <Name>UPC_DATOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC_ENTIDADES\UPC_ENTIDADES.csproj">
+      <Project>{8EB87587-80DB-4685-BD5D-907017F084AC}</Project>
+      <Name>UPC_ENTIDADES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC_LOGICA\UPC_LOGICA.csproj">
+      <Project>{CBAD8A68-4014-4AA6-BE32-C0E352416080}</Project>
+      <Name>UPC_LOGICA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\service.wsdl" />
+    <None Include="Service References\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\UPC_DIRECTORY_SERVICE.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2250</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

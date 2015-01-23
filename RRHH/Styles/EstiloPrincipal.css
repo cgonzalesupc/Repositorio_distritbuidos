@@ -1,0 +1,472 @@
+﻿.#ui-datepicker-div
+{
+	z-index: 9999999;
+}
+.titulo
+{
+	color: #333333;
+	font-family: Arial;
+	text-transform: uppercase;
+	font-size: 8pt;
+}
+.textB
+{
+	font-size:12px;
+	color:#000066;
+	font-family:Verdana;
+	background-color:#EFF5FB;
+}
+.textC
+{
+	font-size:12px;
+	color:#000066;
+	font-family:Verdana;
+	background-color:#EFF5FB;
+}
+.ddlist
+{
+	font-size:10px;
+	color:#000066;
+	font-family:Verdana;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+    margin-left: 0px;
+}
+.ddlist2
+{
+	font-size:10px;
+	color:#000066;
+	background-color:#EFF5FB;
+	font-family:Verdana;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+    margin-left: 0px;
+}
+.titNormal
+{
+	color: #333333;
+	font-family: Arial;
+	font-size: 8pt;
+}
+
+.chk
+{
+	color: #333333;
+	font-family: Arial;
+	text-transform: uppercase;
+	font-size: 8pt;
+}
+
+.fondo
+{
+	padding-right: 3px;
+	padding-left: 15px;
+	font-size: 8pt;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 3px;
+	color: #E5E5E5;
+	padding-top: 3px;
+	background-color: #E5E5E5;
+	border-right: #FFFFFF 1pt solid;
+	border-top: #FFFFFF 1pt solid;
+	border-left: #FFFFFF 1pt solid;
+	border-bottom: #FFFFFF 1pt solid;
+	border-spacing: 2px;
+}
+
+.cajatexto
+{
+	color: black;
+	font-family: Arial;
+	font-size: 10px;
+	border-right: #333333 1px solid;
+	border-top: #333333 1px solid;
+	margin-left: 3px;
+	border-left: #333333 1px solid;
+	border-bottom: #333333 1px solid;
+	text-transform: uppercase;
+	background-color:White;
+	width:120px
+}
+
+.cajatextoNormal
+{
+	color: black;
+	font-family: Arial;
+	font-size: 10px;
+	border-right: #333333 1px solid;
+	border-top: #333333 1px solid;
+	margin-left: 3px;
+	border-left: #333333 1px solid;
+	border-bottom: #333333 1px solid;
+	background-color:White;
+}
+
+.cajatextoMin
+{
+	color: black;
+	font-family: Arial;
+	font-size: 10px;
+	border-right: #333333 1px solid;
+	border-top: #333333 1px solid;
+	margin-left: 3px;
+	border-left: #333333 1px solid;
+	border-bottom: #333333 1px solid;
+	text-transform: lowercase;
+}
+
+.boton
+{
+	cursor: hand;
+	background-color: #A9A9A9;
+	border-right: 2px Groove #4D4D4D;
+	border-bottom: 2px Groove #4D4D4D;
+	font-size: 11px;
+	font-family: Arial;
+	font-size: xx-small;
+	color: white;
+	text-transform: uppercase;
+    border-left-style: Groove;
+    border-left-width: 2px;
+    border-top-style: Groove;
+    border-top-width: 2px;
+}
+
+.gridItemGroup
+{
+	background: white;
+	color: #333333;
+	font-family: Arial;
+	font-size: 10px;
+	cursor: default;
+	border-bottom: #aacbee 1px solid;
+}
+
+.gridPage
+{
+	color: black;
+	font-family: Arial;
+	font-size: 8px;
+	background: #E5E5E5;
+	vertical-align: baseline;
+	cursor: default;
+	text-decoration: none;
+	border-right: #aacbee 1px solid;
+	border-top: #aacbee 1px solid;
+	border-left: #aacbee 1px solid;
+	border-bottom: #aacbee 1px solid;
+}
+
+.selectedItem
+{
+	background-color: #07519a;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 15px;
+	color: White;
+	text-align: center;
+	cursor: default;
+	border-bottom: #aacbee 0px solid;
+}
+
+.gridHead
+{
+	color: #2A2A2A;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 11px;
+	text-align: center;
+	background: #E5E5E5;
+	vertical-align: middle;
+	cursor: default;
+	text-decoration: none;
+	border-right: #aacbee 1px solid;
+	border-top: #aacbee 1px solid;
+	border-left: #aacbee 1px solid;
+	border-bottom: #aacbee 1px solid;
+}
+.gridRow
+{
+	color: #2A2A2A;
+	font-family: Arial;
+	font-size: 10px;
+	text-align: center;
+	vertical-align: baseline;
+	cursor: default;
+	text-decoration: none;
+	border-right: #aacbee 1px solid;
+	border-top: #aacbee 1px solid;
+	border-left: #aacbee 1px solid;
+	border-bottom: #aacbee 1px solid;
+}
+
+.detail
+{
+	cursor: pointer;
+}
+
+#ui-datepicker-div
+{
+	font-size: 60%;
+}
+
+.sombra
+{
+	position: fixed;
+	z-index: 99;
+	top: 0px;
+	left: 0px;
+	background-color: #8D8D8D;
+	width: 100%;
+	height: 100%;
+	filter: Alpha(Opacity=70);
+	opacity: 0.70;
+	-moz-opacity: 0.70;
+}
+
+.modalPopup3
+{
+	background-color: #ffffff;
+	border-width: 3px;
+	border-style: solid;
+	border-color: Gray;
+	padding: 3px;
+	width: 200px;
+}
+
+.modalPopup
+{
+	background-color: transparent;
+    padding: 1em 6px;
+}
+
+.modalPopup2
+{
+    background-color: #ffffff;
+    vertical-align: top;
+}
+
+.modalBackground
+{
+	background-color: gray;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+
+.textOriginalNotBold2
+{
+	color: gray;
+	font-family: Arial;
+	font-size: 11px;
+	text-align: left;
+	width: 150px;
+}
+
+.textOriginalNotBold3
+{
+	color: gray;
+	font-family: Arial;
+	font-size: 11px;
+	text-align: left;
+	width: auto;
+}
+
+
+/* Paginación */
+
+.anterior
+{
+	background: transparent url(../Imagenes/previous.gif) no-repeat scroll center;
+	height: 1.3em;
+	width: 16px;
+	cursor: pointer;
+}
+.siguiente
+{
+	background: transparent url(../Imagenes/next.gif) no-repeat scroll center;
+	height: 1.3em;
+	width: 16px;
+	cursor: pointer;
+}
+.primero
+{
+	background: transparent url(../Imagenes/first.gif) no-repeat scroll center;
+	height: 1.3em;
+	width: 16px;
+	cursor: pointer;
+}
+.ultimo
+{
+	background: transparent url(../Imagenes/last.gif) no-repeat scroll center;
+	height: 1.3em;
+	width: 16px;
+	cursor: pointer;
+}
+
+.quick-alert
+{
+font-family : Arial;
+font-size : 10pt;
+border: 1px solid;
+margin: 10px 0px;
+padding:10px 9px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('../Imagenes/success.png');
+}
+
+.quick-error 
+{
+font-family : Arial;
+font-size : 10pt;
+border: 1px solid;
+margin: 10px 0px;
+padding:10px 9px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('../Imagenes/error.png');
+}
+
+.quick-info
+{
+font-family : Arial;
+font-size : 10pt;
+border: 1px solid;
+margin: 10px 0px;
+padding:10px 9px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('../Imagenes/info.png');
+
+}
+
+.btnInvisible
+{position:absolute; top:50; left:150; z-Index:0; visibility:hidden}
+
+.fua
+{
+	color: black;
+	font-family: Arial;
+	font-size: xx-small;
+	width: 280px;
+}
+
+.comment_css
+{
+color: #2E2D2D;
+background-color: #cccccc;
+-moz-border-radius-topleft: 18px; 
+-moz-border-radius-topright: 18px; 
+-moz-border-radius-bottomright: 18px; 
+-moz-border-radius-bottomleft: 18px;
+background-image:url(../Imagenes/comment_user_32.png);
+background-repeat: no-repeat;
+padding-left:25px;
+padding-top:10px;
+height:30px;
+}
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#CD000B;    
+    width:100%;
+}
+
+.menu
+{
+	font-family: Arial;
+	text-transform: uppercase;
+	font-size: 8pt;
+	padding-right: 3px;
+	padding-left: 5px;	
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	background-color: #D2D1D1;
+	border-right: #FFFFFF 1pt solid;
+	border-top: #FFFFFF 1pt solid;
+	border-left: #FFFFFF 1pt solid;
+	border-bottom: #FFFFFF 1pt solid;
+	border-spacing: 2px;
+	color: #D2D1D1;
+}
+
+.textOriginalNotBold
+{
+	color: gray;
+	font-family: Arial;
+	font-size: 11px;
+	text-align: left;
+	width: 100px;
+}
+
+/*div.menu
+{
+    padding: 0px 0px 0px 16px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #1E4B52;
+    border: 1px #204F56 solid;
+    color: #ffffff;
+    display: block;
+    line-height: 1.20em;
+    padding: 10px 30px 10px 30px;
+    text-align:center;
+    text-decoration: none;
+    text-transform:uppercase;
+    font-weight:bold;
+    white-space: nowrap;
+    width: auto;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #cceaee;
+    color: #1E4B52;
+    text-decoration: none;    
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+div.menu ul li a:active
+{   
+    background-color: #1A4CD3;        
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform:uppercase;
+    font-weight:bold;
+}*/
+
+.ReportViewer
+{
+	color: black;
+	font-family: Arial;
+	font-size: 25px;
+	border-right: #333333 1px solid;
+	border-top: #333333 1px solid;
+	margin-left: 3px;
+	border-left: #333333 1px solid;
+	border-bottom: #333333 1px solid;
+	text-transform: lowercase;
+	display:inline;
+}
