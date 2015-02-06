@@ -186,19 +186,57 @@
     <Content Include="Imagenes\pie_de_pagina_STD.png" />
     <Content Include="Imagenes\previous.gif" />
     <Content Include="Imagenes\punto.jpg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference2\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WebServicePostulante\configuration91.svcinfo" />
+    <None Include="Service References\WebServicePostulante\configuration.svcinfo" />
+    <None Include="Service References\WebServicePostulante\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Styles\EstiloPrincipal.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Service References\ServiceReference2\RRHH.ServiceReference2.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference2\RRHH.ServiceReference2.Personal_RENIEC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServicePostulante\RRHH.WebServicePostulante.trabajador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServicePostulante\TrabajadorWS.wsdl" />
+    <None Include="Service References\WebServicePostulante\TrabajadorWSImplService.wsdl" />
+    <None Include="Web References\serviciosUPC\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\serviciosUPC\trabajador.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\serviciosUPC\TrabajadorWS.wsdl" />
+    <None Include="Web References\serviciosUPC\TrabajadorWSImplService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\ChangePassword.aspx.cs">
@@ -261,6 +299,26 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebServicePostulante\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\serviciosUPC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +346,38 @@
   <ItemGroup>
     <Content Include="MasterPage.Master" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
+    <WCFMetadataStorage Include="Service References\WebServicePostulante\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference2\service.wsdl" />
+    <None Include="Service References\ServiceReference2\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference2\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference2\UPC_DIRECTORY_SERVICE.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://distribuidosupc1.jelasticlw.com.br/RRHHIntegration/TrabajadorWSImpl%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\serviciosUPC\</RelPath>
+      <UpdateFromURL>http://distribuidosupc1.jelasticlw.com.br/RRHHIntegration/TrabajadorWSImpl%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>RRHH_serviciosUPC_TrabajadorWSImplService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -301,7 +391,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2250</DevelopmentServerPort>
+          <DevelopmentServerPort>49469</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.ws.servicesweb.rrhhintegration.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ws.servicesweb.rrhhintegration.com/" name="TrabajadorWSImplService" targetNamespace="http://impl.ws.servicesweb.rrhhintegration.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://ws.servicesweb.rrhhintegration.com/" location="http://distribuidosupc1.jelasticlw.com.br/RRHHIntegration/TrabajadorWSImpl?wsdl=TrabajadorWS.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="TrabajadorWSImplServiceSoapBinding" type="ns1:TrabajadorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerTodos">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerTodos">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerTodosResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarTrabajador">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="registrarTrabajador">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="registrarTrabajadorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTrabajador">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="eliminarTrabajador">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="eliminarTrabajadorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarTrabajador">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="actualizarTrabajador">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="actualizarTrabajadorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrabajadorWSImplService">
+    <wsdl:port name="TrabajadorWSImplPort" binding="tns:TrabajadorWSImplServiceSoapBinding">
+      <soap:address location="http://jboss7.jelasticlw.com.br:80/RRHHIntegration/TrabajadorWSImpl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

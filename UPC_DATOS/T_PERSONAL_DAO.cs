@@ -41,7 +41,7 @@ namespace UPC_DATOS
            }
        }
 
-       public DataSet ObtenerListado(int codigo)
+       public DataSet ObtenerUnoPersonal(int codigo)
        {
            using (SqlCommand dbCmd = new SqlCommand("sps_obtenerUno_Personal", SqlClientUPC))
            {
@@ -86,10 +86,10 @@ namespace UPC_DATOS
                    dbCmd.Parameters.Add("@PATERNO", SqlDbType.VarChar).Value = _Be.ape_paterno;
                    dbCmd.Parameters.Add("@MATERNO", SqlDbType.VarChar).Value = _Be.ape_materno;
                    dbCmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = _Be.direccion;
-                   dbCmd.Parameters.Add("@EST_CIVIL", SqlDbType.VarChar).Value = _Be.estado_civil;
+                   //dbCmd.Parameters.Add("@EST_CIVIL", SqlDbType.VarChar).Value = _Be.estado_civil;
                    dbCmd.Parameters.Add("@NRO_DOCUMENTO", SqlDbType.Int).Value = _Be.nro_documento;
-                   dbCmd.Parameters.Add("@SEXO", SqlDbType.VarChar).Value = _Be.sexo;
-                   dbCmd.Parameters.Add("@NACIONALIDAD", SqlDbType.VarChar).Value = _Be.des_nacionalidad;
+                   //dbCmd.Parameters.Add("@SEXO", SqlDbType.VarChar).Value = _Be.sexo;
+                   dbCmd.Parameters.Add("@CORREO", SqlDbType.VarChar).Value = _Be.des_nacionalidad;
                    dbCmd.Parameters.Add("@DEPARTAMENTO", SqlDbType.VarChar).Value = _Be.departamento;
                    dbCmd.Parameters.Add("@PROVINCIA", SqlDbType.VarChar).Value = _Be.provincia;
                    dbCmd.Parameters.Add("@DISTRITO", SqlDbType.VarChar).Value = _Be.distrito;

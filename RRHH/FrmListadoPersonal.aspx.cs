@@ -17,6 +17,7 @@ namespace RRHH
 {
     public partial class FrmListadoPersonal : System.Web.UI.Page
     {
+        WebServicePostulante.TrabajadorWSClient ws = new WebServicePostulante.TrabajadorWSClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -34,27 +35,40 @@ namespace RRHH
             T_PERSONAL_BL bl = new T_PERSONAL_BL();
 
             be.nombre = txtBuscar.Text.ToString();
+            
 
-            gvListado.DataSource = bl.ObtenerListadoPersonal(be);
+            //gvListado.DataSource = bl.ObtenerListadoPersonal(be);
+            gvListado.DataSource = ws.obtenerTodos("", ""); 
             gvListado.DataBind();
 
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
+           // ServiceReference2.Service1Client service = new ServiceReference2.Service1Client();
+            
             T_TRABAJADORES_DIRECTORY be = new T_TRABAJADORES_DIRECTORY();
-            txtNombre.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text)).Nombre;
-            txtPaterno.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Ape_paterno;
-            txtMaterno.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Ape_materno;
-            txtSexo.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Sexo;
-            txtEstadoCivil.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Est_civil1;
-            txtNacionalidad.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Nacionalidad;
-            txtDepartamento.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Departamento1;
-            txtProvincia.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Provincia;
-            txtDistrito.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Distrito;
-            txtDomicilio.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Domicilio1;
-            imgFoto.ImageUrl = "~/FOTOS/" + service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Foto;
+            txtNombre.Text = ws.obtenerUno(txtBuscar_DNI.Text).nombres;
+            txtPaterno.Text = ws.obtenerUno(txtBuscar_DNI.Text).apePat;
+            txtMaterno.Text = ws.obtenerUno(txtBuscar_DNI.Text).apeMat;
+            txtSexo.Text = ws.obtenerUno(txtBuscar_DNI.Text).correo;
+            txtEstadoCivil.Text = ws.obtenerUno(txtBuscar_DNI.Text).estadoCivil;
+            txtNacionalidad.Text = ws.obtenerUno(txtBuscar_DNI.Text).codigoNacionalidad;
+            txtDepartamento.Text = ws.obtenerUno(txtBuscar_DNI.Text).codigoDepartamento;
+            txtProvincia.Text = ws.obtenerUno(txtBuscar_DNI.Text).codigoProvincia;
+            txtDistrito.Text = ws.obtenerUno(txtBuscar_DNI.Text).codigoDistrito;
+            txtDomicilio.Text = ws.obtenerUno(txtBuscar_DNI.Text).direccion;
+            imgFoto.ImageUrl = "~/FOTOS/" + ws.obtenerUno(txtBuscar_DNI.Text).nombres+".jpg";
+            //txtPaterno.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Ape_paterno;
+            //txtMaterno.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Ape_materno;
+            //txtSexo.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Sexo;
+            //txtEstadoCivil.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Est_civil1;
+            //txtNacionalidad.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Nacionalidad;
+            //txtDepartamento.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Departamento1;
+            //txtProvincia.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Provincia;
+            //txtDistrito.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Distrito;
+            //txtDomicilio.Text = service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Domicilio1;
+            //imgFoto.ImageUrl = "~/FOTOS/" + service.Obtener_Reniec(Convert.ToInt32(txtBuscar_DNI.Text.ToString())).Foto;
         }
 
         protected void btnNuevo_Click(object sender, EventArgs e)
@@ -83,10 +97,17 @@ namespace RRHH
             _be.direccion = txtDomicilio.Text;
 
 
-            if (btnCambio.Text.Equals("Guardar")) {
+            if (btnCambio.Text.Equals("Guardar"))
+            {
 
                 _bl.NuevoPersonal(_be);
                 ScriptManager.RegisterStartupScript(this.PnlMantenimiento, GetType(), "Script", MessageBox("Grabacion Satisfactoria."), true);
+            }
+            else
+            {
+                _be.id_trabajador = Convert.ToInt16(hdnIdPersonal.Value);
+                _bl.ActualizarPersonal(_be);
+                ScriptManager.RegisterStartupScript(this.PnlMantenimiento, GetType(), "Script", MessageBox("Actualizacion Satisfactoria."), true);
             }
 
             listar();
@@ -103,30 +124,79 @@ namespace RRHH
         {
             if (e.CommandName.Equals("Edt"))
                 {
+                    
+                    int index = int.Parse(e.CommandArgument.ToString());
+                    GridViewRow row;
                     PnlListado.Visible = false;
                     PnlMantenimiento.Visible = true;
-
                     btnCambio.Text = "Actualizar";
+
+                    if (gvListado.PageIndex == 0)
+                    {
+                        row = gvListado.Rows[index];
+                        editar(gvListado.DataKeys[row.RowIndex].Values[0].ToString());
+                    }
+
                     
-                    //editar(key.Value.ToString());
                 }
                 else if (e.CommandName.Equals("Del"))
                 {
-
-                    DataKey key = gvListado.DataKeys[0];
+                    GridViewRow row;
+                    int index = int.Parse(e.CommandArgument.ToString());
+                    row = gvListado.Rows[index];
                    
                     T_PERSONAL_BL _bl = new T_PERSONAL_BL();
 
-                    int CODIGO = Convert.ToInt16(key.Value.ToString());
+                    int CODIGO = Convert.ToInt16(gvListado.DataKeys[row.RowIndex].Values[0].ToString());
                     _bl.Eliminar(CODIGO);
 
                     listar();
                 }
            
         }
+
+        public void editar(string codigo) {
+            int codigo1 = Convert.ToInt16(codigo);
+            T_PERSONAL_BL _bl = new T_PERSONAL_BL();
+
+            DataTable dt = _bl.ObtenerUnoPersonal(codigo1).Tables[0];
+
+            txtBuscar_DNI.Text = dt.Rows[0]["NRO_DOCUMENTO"].ToString().Trim();
+            txtNombre.Text = dt.Rows[0]["NOMBRE"].ToString().Trim();
+            txtPaterno.Text = dt.Rows[0]["APE_PATERNO"].ToString().Trim();
+            txtMaterno.Text = dt.Rows[0]["APE_MATERNO"].ToString().Trim();
+            txtEstadoCivil.Text = dt.Rows[0]["ESTADO_CIVIL"].ToString().Trim();
+            txtSexo.Text = dt.Rows[0]["SEXO"].ToString().Trim();
+            txtNacionalidad.Text = dt.Rows[0]["DES_NACIONALIDAD"].ToString().Trim();
+            txtDepartamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString().Trim();
+            txtProvincia.Text = dt.Rows[0]["PROVINCIA"].ToString().Trim();
+            txtDistrito.Text = dt.Rows[0]["DISTRITO"].ToString().Trim();
+            txtDomicilio.Text = dt.Rows[0]["DIRECCION"].ToString().Trim();
+            hdnIdPersonal.Value = dt.Rows[0]["id"].ToString().Trim();
+            imgFoto.ImageUrl = "~/FOTOS/" + dt.Rows[0]["FOTO"].ToString().Trim();
+            ImageButton1.Visible = false;
+            txtBuscar_DNI.Enabled = false;
+        }
         public static string MessageBox(string var_mensaje)
         {
             return "window.alert('" + var_mensaje + "');";
+        }
+
+        public void limpiarMant() {
+
+            txtBuscar_DNI.Text = "";
+            txtNombre.Text = "";
+            txtPaterno.Text = "";
+            txtMaterno.Text = "";
+            txtEstadoCivil.Text = "";
+            txtSexo.Text = "";
+            txtNacionalidad.Text = "";
+            txtDepartamento.Text = "";
+            txtProvincia.Text = "";
+            txtDistrito.Text = "";
+            txtDomicilio.Text = "";
+            hdnIdPersonal.Value = "";
+            imgFoto.ImageUrl = "";
         }
     }
 }

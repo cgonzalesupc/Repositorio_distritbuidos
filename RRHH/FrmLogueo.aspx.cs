@@ -29,7 +29,7 @@ namespace RRHH
         {
            
 
-            ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
+            ServiceReference2.Service1Client service = new ServiceReference2.Service1Client();
             T_TRABAJADORES_DIRECTORY be = new T_TRABAJADORES_DIRECTORY();
             string nombre =service.GetDatosTrabajador(txtUsuario.Text.ToString(), txtContrasenia.Text.ToString()).Nombre;
             string ape_paterno = service.GetDatosTrabajador(txtUsuario.Text.ToString(), txtContrasenia.Text.ToString()).Ape_paterno;

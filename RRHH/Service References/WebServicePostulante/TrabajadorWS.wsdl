@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://ws.servicesweb.rrhhintegration.com/" name="TrabajadorWS" targetNamespace="http://ws.servicesweb.rrhhintegration.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://ws.servicesweb.rrhhintegration.com/" targetNamespace="http://ws.servicesweb.rrhhintegration.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="trabajador">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apeMat" type="xs:string" />
+          <xs:element minOccurs="0" name="apePat" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoAFP" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoBancoAbono" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoDNI" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoDepartamento" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoDistrito" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoNacionalidad" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoProvincia" type="xs:string" />
+          <xs:element minOccurs="0" name="correo" type="xs:string" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="estadoActivo" type="xs:string" />
+          <xs:element minOccurs="0" name="estadoCivil" type="xs:string" />
+          <xs:element minOccurs="0" name="nombres" type="xs:string" />
+          <xs:element minOccurs="0" name="numCUPS" type="xs:string" />
+          <xs:element minOccurs="0" name="sexoColaborador" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="trabajadorArray" final="#all">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="tns:trabajador" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerTodosResponse">
+    <wsdl:part name="response" type="ns1:trabajadorArray" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTodos">
+    <wsdl:part name="nombre" type="xsd:string" />
+    <wsdl:part name="codigoTrabajador" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="obtenerUnoResponse">
+    <wsdl:part name="response" type="ns1:trabajador" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTrabajadorResponse">
+    <wsdl:part name="response" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="registrarTrabajador">
+    <wsdl:part name="trabajador" type="ns1:trabajador" />
+  </wsdl:message>
+  <wsdl:message name="actualizarTrabajadorResponse">
+    <wsdl:part name="response" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="actualizarTrabajador">
+    <wsdl:part name="trabajador" type="ns1:trabajador" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTrabajador">
+    <wsdl:part name="codigoTrabajador" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="obtenerUno">
+    <wsdl:part name="codigoTrabajador" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="registrarTrabajadorResponse">
+    <wsdl:part name="response" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="TrabajadorWS">
+    <wsdl:operation name="registrarTrabajador">
+      <wsdl:input name="registrarTrabajador" message="ns1:registrarTrabajador" />
+      <wsdl:output name="registrarTrabajadorResponse" message="ns1:registrarTrabajadorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUno">
+      <wsdl:input name="obtenerUno" message="ns1:obtenerUno" />
+      <wsdl:output name="obtenerUnoResponse" message="ns1:obtenerUnoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTodos">
+      <wsdl:input name="obtenerTodos" message="ns1:obtenerTodos" />
+      <wsdl:output name="obtenerTodosResponse" message="ns1:obtenerTodosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTrabajador">
+      <wsdl:input name="eliminarTrabajador" message="ns1:eliminarTrabajador" />
+      <wsdl:output name="eliminarTrabajadorResponse" message="ns1:eliminarTrabajadorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarTrabajador">
+      <wsdl:input name="actualizarTrabajador" message="ns1:actualizarTrabajador" />
+      <wsdl:output name="actualizarTrabajadorResponse" message="ns1:actualizarTrabajadorResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

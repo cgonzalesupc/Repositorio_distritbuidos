@@ -14,10 +14,17 @@ namespace UPC_LOGICA
        {
            return new T_PERSONAL_DAO().ObtenerListado(oBE);
        }
-
+       public DataSet ObtenerUnoPersonal(int codigo)
+       {
+           return new T_PERSONAL_DAO().ObtenerUnoPersonal(codigo);
+       }
        public int NuevoPersonal(T_PERSONAL oBE)
        {
            return new T_PERSONAL_DAO().Insert(oBE);
+       }
+       public int ActualizarPersonal(T_PERSONAL oBE)
+       {
+           return new T_PERSONAL_DAO().Update(oBE);
        }
        public int Eliminar(int codigo)
        {

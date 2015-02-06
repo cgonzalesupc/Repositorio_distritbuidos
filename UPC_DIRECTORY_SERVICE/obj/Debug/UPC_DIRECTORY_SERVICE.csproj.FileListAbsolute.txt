@@ -19,6 +19,5 @@ C:\Users\cesar\Documents\BK_UPC_SERVICES\RRHH\UPC_DIRECTORY_SERVICE\obj\Debug\UP
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\bin\Debug\UPC_DIRECTORY_SERVICE.dll.config
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\bin\Debug\UPC_DIRECTORY_SERVICE.dll
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\bin\Debug\UPC_DIRECTORY_SERVICE.pdb
-C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\obj\Debug\UPC_DIRECTORY_SERVICE.csprojResolveAssemblyReference.cache
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\obj\Debug\UPC_DIRECTORY_SERVICE.dll
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\obj\Debug\UPC_DIRECTORY_SERVICE.pdb

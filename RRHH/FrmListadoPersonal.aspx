@@ -36,19 +36,20 @@
     <tr>
         <td colspan="3">
             <asp:GridView ID="gvListado" runat="server" CellPadding="4" ForeColor="#333333" 
-                GridLines="None" AutoGenerateColumns="False" OnRowCommand="gvListado_RowCommand">
-                <AlternatingRowStyle BackColor="White" />
-                 <RowStyle CssClass="gridItemGroup" Height="19px"></RowStyle>
+                GridLines="None" AutoGenerateColumns="False" OnRowCommand="gvListado_RowCommand" DataKeyNames="codigoDNI">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                 <RowStyle CssClass="gridItemGroup" Height="19px" BackColor="#F7F6F3" 
+                    ForeColor="#333333"></RowStyle>
                 <Columns>
-                    <asp:BoundField DataField="NOMBRE_COMPLETO" HeaderText="NOMBRES Y APELLIDOS" />
-                    <asp:BoundField DataField="NRO_DOCUMENTO" HeaderText="NRO DOCUMENTO" />
-                    <asp:BoundField DataField="SEXO" HeaderText="SEXO" />
-                    <asp:BoundField DataField="DES_NACIONALIDAD" HeaderText="NACIONALIDAD" />
-                    <asp:BoundField DataField="DEPARTAMENTO" HeaderText="DEPARTAMENTO" />
-                    <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" />
-                    <asp:BoundField DataField="DISTRITO" HeaderText="DISTRITO" />
-                    <asp:BoundField DataField="DIRECCION" HeaderText="DOMICILIO" />
-                     <asp:TemplateField HeaderStyle-Width="2%">
+                    <asp:BoundField DataField="nombres" HeaderText="NOMBRES" />
+                    <asp:BoundField DataField="apePat" HeaderText="PATERNO" />
+                    <asp:BoundField DataField="apeMat" HeaderText="MATERNO" />
+                    <asp:BoundField DataField="codigoDNI" HeaderText="NRO DOCUMENTO" />
+                    <asp:BoundField DataField="codigoDepartamento" HeaderText="DEPARTAMENTO" />
+                    <asp:BoundField DataField="codigoProvincia" HeaderText="PROVINCIA" />
+                    <asp:BoundField DataField="codigoDistrito" HeaderText="DISTRITO" />
+                    <asp:BoundField DataField="direccion" HeaderText="DOMICILIO" />
+                   <%--  <asp:TemplateField HeaderStyle-Width="2%">
                     <ItemTemplate>
                         <asp:ImageButton ID="imgEditar" runat="server" CommandArgument='<% # Container.DataItemIndex %>'
                             CommandName="Edt" CssClass="detail" Height="14px" ImageUrl="~/Imagenes/btnEdit.png"
@@ -57,20 +58,21 @@
                             CommandName="Del" CssClass="detail" Height="14px" ImageUrl="~/Imagenes/btnDelete.png"
                             ToolTip="Eliminar" OnClientClick="return confirm('¿Seguro de elimnar al personal?');" />
                     </ItemTemplate>
+                         <HeaderStyle Width="2%" />
                     <ItemStyle HorizontalAlign="Center" Width="15px"></ItemStyle>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
                                                                   
                 </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
         </td>
     </tr>
@@ -135,6 +137,10 @@
     </td><td align="left" colspan="2"> 
             <asp:TextBox ID="txtDomicilio" runat="server" CssClass="cajatexto" Width="250px"></asp:TextBox>
         </td><td></td></tr>
+        <tr><td>
+            <asp:HiddenField ID="hdnIdPersonal" runat="server" />
+        </td></tr>
+
          <tr><td align="left">
     
     </td><td align="center" colspan="2"> 

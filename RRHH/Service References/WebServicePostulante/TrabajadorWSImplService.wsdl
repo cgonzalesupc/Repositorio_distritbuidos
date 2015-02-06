@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.ws.servicesweb.rrhhintegration.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ws.servicesweb.rrhhintegration.com/" name="TrabajadorWSImplService" targetNamespace="http://impl.ws.servicesweb.rrhhintegration.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://ws.servicesweb.rrhhintegration.com/" location="http://181.177.245.11:9595/RRHHIntegration/TrabajadorWSImpl?wsdl=TrabajadorWS.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="TrabajadorWSImplServiceSoapBinding" type="ns1:TrabajadorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="registrarTrabajador">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="registrarTrabajador">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:input>
+      <wsdl:output name="registrarTrabajadorResponse">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerUno">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="obtenerUno">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:input>
+      <wsdl:output name="obtenerUnoResponse">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTodos">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="obtenerTodos">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:input>
+      <wsdl:output name="obtenerTodosResponse">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTrabajador">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="eliminarTrabajador">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:input>
+      <wsdl:output name="eliminarTrabajadorResponse">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarTrabajador">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="actualizarTrabajador">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:input>
+      <wsdl:output name="actualizarTrabajadorResponse">
+        <soap:body use="literal" namespace="http://ws.servicesweb.rrhhintegration.com/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrabajadorWSImplService">
+    <wsdl:port name="TrabajadorWSImplPort" binding="tns:TrabajadorWSImplServiceSoapBinding">
+      <soap:address location="http://181.177.245.11:9595/RRHHIntegration/TrabajadorWSImpl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
