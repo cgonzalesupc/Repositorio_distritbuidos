@@ -35,6 +35,15 @@ namespace UPC_DIRECTORY_SERVICE
         string ape_materno;
         string usuario;
         string password;
+        string id_empresa;
+
+
+        [DataMember]
+        public string Id_empresa
+        {
+            get { return id_empresa; }
+            set { id_empresa = value; }
+        }
 
 
         [DataMember]

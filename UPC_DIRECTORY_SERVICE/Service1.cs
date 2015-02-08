@@ -43,6 +43,7 @@ namespace UPC_DIRECTORY_SERVICE
                 composite.Nombre = ObjDataset.Tables[0].Rows[0][1].ToString();
                 composite.Ape_paterno = ObjDataset.Tables[0].Rows[0][2].ToString();
                 composite.Ape_materno = ObjDataset.Tables[0].Rows[0][3].ToString();
+                composite.Id_empresa = ObjDataset.Tables[0].Rows[0][6].ToString();
             }
             objConnection.Close();
 

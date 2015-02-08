@@ -21,3 +21,4 @@ C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\bi
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\bin\Debug\UPC_DIRECTORY_SERVICE.pdb
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\obj\Debug\UPC_DIRECTORY_SERVICE.dll
 C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\obj\Debug\UPC_DIRECTORY_SERVICE.pdb
+C:\Users\cesar\Documents\RRHH\Repositorio_distritbuidos\UPC_DIRECTORY_SERVICE\obj\Debug\UPC_DIRECTORY_SERVICE.csprojResolveAssemblyReference.cache

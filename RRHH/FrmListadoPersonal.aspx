@@ -12,20 +12,30 @@
     <table width="100%">
     <tr>
         <td colspan="3">
-            <asp:Label ID="Label1" runat="server" Text="LISTADO DE PERSONAL" CssClass="titulo"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="LISTADO DE POSTULANTE" CssClass="titulo"></asp:Label>
         </td>
     </tr>
     <tr>
         <td>
-            <asp:Label ID="Label2" runat="server" Text="Ingrese Texto" CssClass="textB"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Ingrese Dni" CssClass="textB"></asp:Label>
+            <asp:TextBox ID="txtBuscar" runat="server" CssClass="cajatexto"></asp:TextBox>
         </td>
         <td align="left">
-            <asp:TextBox ID="txtBuscar" runat="server" CssClass="cajatexto"></asp:TextBox>
-            <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" CssClass="boton" 
-                onclick="btnNuevo_Click" />
+            <asp:Label ID="Label15" runat="server" Text="Seleccione Campaña" CssClass="textB"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:DropDownList ID="ddlCampaña" runat="server" CssClass="cajatexto">
+                <asp:ListItem Value="0">Seleccione</asp:ListItem>
+                <asp:ListItem Value="1">Campaña 1</asp:ListItem>
+                <asp:ListItem Value="2">Campaña 2</asp:ListItem>
+                <asp:ListItem Value="3">Campaña 3</asp:ListItem>
+            </asp:DropDownList>
+            
         </td>
         <td>
-            &nbsp;</td>
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="boton" 
+                 />
+                <asp:Button ID="Button1" runat="server" Text="Nuevo" CssClass="boton" 
+                onclick="btnNuevo_Click" /></td>
     </tr>
     <tr>
         <td colspan="2">
@@ -88,8 +98,8 @@
             <asp:TextBox ID="txtBuscar_DNI" runat="server" CssClass="cajatexto"></asp:TextBox>
             <asp:ImageButton ID="ImageButton1" runat="server" 
                 ImageUrl="~/Imagenes/btnSearch.gif" onclick="ImageButton1_Click" />
-        </td><td></td><td style="width:180px"></td><td rowspan="5">
-        <asp:Image ID="imgFoto" runat="server" Width="80px" Height="80px" />
+        </td><td></td><td style="width:180px"></td><td rowspan="6">
+        <asp:Image ID="imgFoto" runat="server" Width="80px" Height="80px"  Visible=false/>
         </td></tr>
     <tr><td align="left">
         <asp:Label ID="Label5" runat="server" Text="Nombres"></asp:Label>
@@ -115,14 +125,29 @@
             <asp:TextBox ID="txtSexo" runat="server" CssClass="cajatexto"></asp:TextBox>
         </td></tr>
         <tr><td style="width:180px" align="left">
-        <asp:Label ID="Label11" runat="server" Text="Nacionalidad" ></asp:Label>
-        </td><td align="left">
-            <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="cajatexto"></asp:TextBox>
-        </td><td style="width:180px" align="left">
-        <asp:Label ID="Label12" runat="server" Text="Departamento" ></asp:Label>
-        </td><td align="left">
-            <asp:TextBox ID="txtDepartamento" runat="server" CssClass="cajatexto"></asp:TextBox>
-        </td></tr>
+            <asp:Label ID="Label16" runat="server" Text="Telefono" ></asp:Label>  </td>
+            <td align="left"> 
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="cajatexto"></asp:TextBox></td>
+                <td style="width:180px" align="left"><asp:Label ID="Label18" runat="server" Text="Correo"></asp:Label></td>
+                <td align="left"><asp:TextBox ID="txtCorreo" runat="server" CssClass="cajatexto"></asp:TextBox></td>
+                </tr>
+        
+        <tr>
+            
+
+            <td align="left" style="width:180px">
+                <asp:Label ID="Label11" runat="server" Text="Nacionalidad"></asp:Label>
+            </td>
+            <td align="left">
+                <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="cajatexto"></asp:TextBox>
+            </td>
+            <td align="left" style="width:180px">
+                <asp:Label ID="Label12" runat="server" Text="Departamento"></asp:Label>
+            </td>
+            <td align="left">
+                <asp:TextBox ID="txtDepartamento" runat="server" CssClass="cajatexto"></asp:TextBox>
+            </td>
+        </tr>
         <tr><td style="width:180px" align="left">
         <asp:Label ID="Label13" runat="server" Text="Provincia" ></asp:Label>
         </td><td align="left">
@@ -132,11 +157,25 @@
         </td><td align="left">
             <asp:TextBox ID="txtDistrito" runat="server" CssClass="cajatexto"></asp:TextBox>
         </td></tr>
-    <tr><td align="left">
+        <tr><td align="left">
     <asp:Label ID="Label7" runat="server" Text="Domicilio" ></asp:Label>
     </td><td align="left" colspan="2"> 
             <asp:TextBox ID="txtDomicilio" runat="server" CssClass="cajatexto" Width="250px"></asp:TextBox>
         </td><td></td></tr>
+
+        
+        <tr>
+            <td align="left"> <asp:Label ID="Label17" runat="server" Text="AceptaoNO" ></asp:Label></td>
+            <td align="left" colspan="2"> <asp:DropDownList ID="ddlAcepta" runat="server" CssClass="cajatexto">
+                <asp:ListItem Value="0">Seleccion</asp:ListItem>
+                <asp:ListItem Value="1">Favorable</asp:ListItem>
+                <asp:ListItem Value="2">Desfavorable</asp:ListItem>
+                </asp:DropDownList>  </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+
+        
         <tr><td>
             <asp:HiddenField ID="hdnIdPersonal" runat="server" />
         </td></tr>
