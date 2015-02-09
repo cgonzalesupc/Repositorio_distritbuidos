@@ -20,6 +20,12 @@ namespace RRHH.WebServicePostulante {
         [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
         string registrarTrabajador(RRHH.WebServicePostulante.trabajador trabajador);
         
+        // CODEGEN: Parameter 'response' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlArrayAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
+        RRHH.WebServicePostulante.filtrarTodosResponse filtrarTodos(RRHH.WebServicePostulante.filtrarTodos request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="response")]
@@ -53,6 +59,8 @@ namespace RRHH.WebServicePostulante {
         private string apeMatField;
         
         private string apePatField;
+        
+        private string campanhaField;
         
         private string codigoAFPField;
         
@@ -108,6 +116,18 @@ namespace RRHH.WebServicePostulante {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string campanha {
+            get {
+                return this.campanhaField;
+            }
+            set {
+                this.campanhaField = value;
+                this.RaisePropertyChanged("campanha");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string codigoAFP {
             get {
                 return this.codigoAFPField;
@@ -119,7 +139,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public string codigoBancoAbono {
             get {
                 return this.codigoBancoAbonoField;
@@ -131,7 +151,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public string codigoDNI {
             get {
                 return this.codigoDNIField;
@@ -143,7 +163,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public string codigoDepartamento {
             get {
                 return this.codigoDepartamentoField;
@@ -155,7 +175,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public string codigoDistrito {
             get {
                 return this.codigoDistritoField;
@@ -167,7 +187,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public string codigoNacionalidad {
             get {
                 return this.codigoNacionalidadField;
@@ -179,7 +199,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public string codigoProvincia {
             get {
                 return this.codigoProvinciaField;
@@ -191,7 +211,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public string correo {
             get {
                 return this.correoField;
@@ -203,7 +223,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public string direccion {
             get {
                 return this.direccionField;
@@ -215,7 +235,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public string estadoActivo {
             get {
                 return this.estadoActivoField;
@@ -227,7 +247,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public string estadoCivil {
             get {
                 return this.estadoCivilField;
@@ -239,7 +259,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public string nombres {
             get {
                 return this.nombresField;
@@ -251,7 +271,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string numCUPS {
             get {
                 return this.numCUPSField;
@@ -263,7 +283,7 @@ namespace RRHH.WebServicePostulante {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
         public string sexoColaborador {
             get {
                 return this.sexoColaboradorField;
@@ -281,6 +301,54 @@ namespace RRHH.WebServicePostulante {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="filtrarTodos", WrapperNamespace="http://ws.servicesweb.rrhhintegration.com/", IsWrapped=true)]
+    public partial class filtrarTodos {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string idEmpresa;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        public string idCampanha;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        public string nombre;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        public string codigoTrabajador;
+        
+        public filtrarTodos() {
+        }
+        
+        public filtrarTodos(string idEmpresa, string idCampanha, string nombre, string codigoTrabajador) {
+            this.idEmpresa = idEmpresa;
+            this.idCampanha = idCampanha;
+            this.nombre = nombre;
+            this.codigoTrabajador = codigoTrabajador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="filtrarTodosResponse", WrapperNamespace="http://ws.servicesweb.rrhhintegration.com/", IsWrapped=true)]
+    public partial class filtrarTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public RRHH.WebServicePostulante.trabajador[] response;
+        
+        public filtrarTodosResponse() {
+        }
+        
+        public filtrarTodosResponse(RRHH.WebServicePostulante.trabajador[] response) {
+            this.response = response;
         }
     }
     
@@ -353,6 +421,21 @@ namespace RRHH.WebServicePostulante {
         
         public string registrarTrabajador(RRHH.WebServicePostulante.trabajador trabajador) {
             return base.Channel.registrarTrabajador(trabajador);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RRHH.WebServicePostulante.filtrarTodosResponse RRHH.WebServicePostulante.TrabajadorWS.filtrarTodos(RRHH.WebServicePostulante.filtrarTodos request) {
+            return base.Channel.filtrarTodos(request);
+        }
+        
+        public RRHH.WebServicePostulante.trabajador[] filtrarTodos(string idEmpresa, string idCampanha, string nombre, string codigoTrabajador) {
+            RRHH.WebServicePostulante.filtrarTodos inValue = new RRHH.WebServicePostulante.filtrarTodos();
+            inValue.idEmpresa = idEmpresa;
+            inValue.idCampanha = idCampanha;
+            inValue.nombre = nombre;
+            inValue.codigoTrabajador = codigoTrabajador;
+            RRHH.WebServicePostulante.filtrarTodosResponse retVal = ((RRHH.WebServicePostulante.TrabajadorWS)(this)).filtrarTodos(inValue);
+            return retVal.response;
         }
         
         public RRHH.WebServicePostulante.trabajador obtenerUno(string codigoTrabajador) {

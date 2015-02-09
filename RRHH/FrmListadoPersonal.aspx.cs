@@ -10,7 +10,10 @@ using UPC_DATOS;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Net;
+using System.IO;
+using System.Web.Script.Serialization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 namespace RRHH
@@ -35,10 +38,11 @@ namespace RRHH
             T_PERSONAL_BL bl = new T_PERSONAL_BL();
 
             be.nombre = txtBuscar.Text.ToString();
-            
+            string id_empresa = Session["id_empresa"].ToString();
+
 
             //gvListado.DataSource = bl.ObtenerListadoPersonal(be);
-            gvListado.DataSource = ws.obtenerTodos("", ""); 
+            gvListado.DataSource = ws.filtrarTodos(id_empresa, "", "", ""); 
             gvListado.DataBind();
 
         }
@@ -95,6 +99,30 @@ namespace RRHH
             _be.distrito = txtDistrito.Text;
             _be.nro_documento =Convert.ToInt32(txtBuscar_DNI.Text);
             _be.direccion = txtDomicilio.Text;
+
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+                .Create("http://181.177.245.11:9595/RRHHIntegration/rest/TrabajadorRS/Trabajador/actualizarEstado");
+            //req.Method = "POST";
+            //HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+            //StreamReader reader = new StreamReader(res.GetResponseStream());
+            //string resultado = reader.ReadToEnd();
+            //JavaScriptSerializer js = new JavaScriptSerializer();
+            //BEGalleta galleta = js.Deserialize<BEGalleta>(resultado);
+            //Assert.AreEqual(1, galleta.NumeroSuerte);
+            //Assert.AreEqual("es tu numero de la suerte", galleta.Mensaje.Trim());
+            //Assert.AreEqual("luna", galleta.Seudonimo.Trim());
+            string codigo="";
+            string estado="";
+            var postString = new {codigo:"22334455", estado:"1"};
+            byte[] data = UTF8Encoding.UTF8.GetBytes(postString);
+ 
+            HttpWebRequest request;
+            request = WebRequest.Create("http://localhost/ejemplo/api") as HttpWebRequest;
+            request.Timeout = 10 * 1000;
+            request.Method = "POST";
+            request.ContentLength = data.Length;
+            request.ContentType = "application/json; charset=utf-8";
+
 
 
             if (btnCambio.Text.Equals("Guardar"))

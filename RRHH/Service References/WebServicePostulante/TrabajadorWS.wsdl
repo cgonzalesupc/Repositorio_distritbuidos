@@ -6,6 +6,7 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="apeMat" type="xs:string" />
           <xs:element minOccurs="0" name="apePat" type="xs:string" />
+          <xs:element minOccurs="0" name="campanha" type="xs:string" />
           <xs:element minOccurs="0" name="codigoAFP" type="xs:string" />
           <xs:element minOccurs="0" name="codigoBancoAbono" type="xs:string" />
           <xs:element minOccurs="0" name="codigoDNI" type="xs:string" />
@@ -36,11 +37,20 @@
     <wsdl:part name="nombre" type="xsd:string" />
     <wsdl:part name="codigoTrabajador" type="xsd:string" />
   </wsdl:message>
+  <wsdl:message name="filtrarTodosResponse">
+    <wsdl:part name="response" type="ns1:trabajadorArray" />
+  </wsdl:message>
   <wsdl:message name="obtenerUnoResponse">
     <wsdl:part name="response" type="ns1:trabajador" />
   </wsdl:message>
   <wsdl:message name="eliminarTrabajadorResponse">
     <wsdl:part name="response" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="filtrarTodos">
+    <wsdl:part name="idEmpresa" type="xsd:string" />
+    <wsdl:part name="idCampanha" type="xsd:string" />
+    <wsdl:part name="nombre" type="xsd:string" />
+    <wsdl:part name="codigoTrabajador" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="registrarTrabajador">
     <wsdl:part name="trabajador" type="ns1:trabajador" />
@@ -64,6 +74,10 @@
     <wsdl:operation name="registrarTrabajador">
       <wsdl:input name="registrarTrabajador" message="ns1:registrarTrabajador" />
       <wsdl:output name="registrarTrabajadorResponse" message="ns1:registrarTrabajadorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="filtrarTodos">
+      <wsdl:input name="filtrarTodos" message="ns1:filtrarTodos" />
+      <wsdl:output name="filtrarTodosResponse" message="ns1:filtrarTodosResponse" />
     </wsdl:operation>
     <wsdl:operation name="obtenerUno">
       <wsdl:input name="obtenerUno" message="ns1:obtenerUno" />

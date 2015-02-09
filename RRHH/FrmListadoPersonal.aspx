@@ -45,11 +45,14 @@
     </tr>
     <tr>
         <td colspan="3">
-            <asp:GridView ID="gvListado" runat="server" CellPadding="4" ForeColor="#333333" 
-                GridLines="None" AutoGenerateColumns="False" OnRowCommand="gvListado_RowCommand" DataKeyNames="codigoDNI">
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
+            <asp:GridView ID="gvListado" runat="server" AutoGenerateColumns="False" 
+                CellPadding="4" DataKeyNames="codigoDNI" ForeColor="#333333" GridLines="None" 
+                OnRowCommand="gvListado_RowCommand">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                 <RowStyle CssClass="gridItemGroup" Height="19px" BackColor="#F7F6F3" 
-                    ForeColor="#333333"></RowStyle>
+                <RowStyle BackColor="#F7F6F3" CssClass="gridItemGroup" ForeColor="#333333" 
+                    Height="19px" />
                 <Columns>
                     <asp:BoundField DataField="nombres" HeaderText="NOMBRES" />
                     <asp:BoundField DataField="apePat" HeaderText="PATERNO" />
@@ -59,7 +62,7 @@
                     <asp:BoundField DataField="codigoProvincia" HeaderText="PROVINCIA" />
                     <asp:BoundField DataField="codigoDistrito" HeaderText="DISTRITO" />
                     <asp:BoundField DataField="direccion" HeaderText="DOMICILIO" />
-                   <%--  <asp:TemplateField HeaderStyle-Width="2%">
+                    <%--  <asp:TemplateField HeaderStyle-Width="2%">
                     <ItemTemplate>
                         <asp:ImageButton ID="imgEditar" runat="server" CommandArgument='<% # Container.DataItemIndex %>'
                             CommandName="Edt" CssClass="detail" Height="14px" ImageUrl="~/Imagenes/btnEdit.png"
@@ -71,7 +74,7 @@
                          <HeaderStyle Width="2%" />
                     <ItemStyle HorizontalAlign="Center" Width="15px"></ItemStyle>
                 </asp:TemplateField>--%>
-                                                                  
+                    
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

@@ -34,6 +34,7 @@ namespace MTC_MOREC.Master
                     string nombre = Session["nombre"].ToString();
                     string mater = Session["materno"].ToString();
                     string pater = Session["paterno"].ToString();
+                    int id_empresa = Convert.ToInt16(Session["id_empresa"].ToString());
                     lblUsuario.Text = nombre.Substring(0, 1) + pater;
 
                 }

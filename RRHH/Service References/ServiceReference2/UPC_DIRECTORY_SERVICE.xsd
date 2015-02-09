@@ -4,6 +4,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Ape_materno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ape_paterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id_empresa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />

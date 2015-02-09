@@ -34,9 +34,11 @@ namespace RRHH
             string nombre =service.GetDatosTrabajador(txtUsuario.Text.ToString(), txtContrasenia.Text.ToString()).Nombre;
             string ape_paterno = service.GetDatosTrabajador(txtUsuario.Text.ToString(), txtContrasenia.Text.ToString()).Ape_paterno;
             string ape_materno = service.GetDatosTrabajador(txtUsuario.Text.ToString(), txtContrasenia.Text.ToString()).Ape_materno;
+            int id_empresa =Convert.ToInt16(service.GetDatosTrabajador(txtUsuario.Text.ToString(), txtContrasenia.Text.ToString()).Id_empresa);
             Session["nombre"] = nombre;
             Session["paterno"] = ape_paterno;
             Session["materno"] = ape_materno;
+            Session["id_empresa"] = id_empresa;
 
             if (nombre != "")
             {
