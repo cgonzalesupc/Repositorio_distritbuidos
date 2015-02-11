@@ -45,8 +45,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <asp:GridView ID="GridView1" runat="server">
-            </asp:GridView>
+            
             <asp:GridView ID="gvListado" runat="server" AutoGenerateColumns="False" 
                 CellPadding="4" DataKeyNames="codigoDNI" ForeColor="#333333" GridLines="None" 
                 OnRowCommand="gvListado_RowCommand">

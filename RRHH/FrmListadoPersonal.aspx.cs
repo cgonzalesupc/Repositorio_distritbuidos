@@ -13,7 +13,9 @@ using System.Data;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
+
+
 
 
 namespace RRHH
@@ -100,43 +102,19 @@ namespace RRHH
             _be.nro_documento =Convert.ToInt32(txtBuscar_DNI.Text);
             _be.direccion = txtDomicilio.Text;
 
-            HttpWebRequest req = (HttpWebRequest)WebRequest
-                .Create("http://181.177.245.11:9595/RRHHIntegration/rest/TrabajadorRS/Trabajador/actualizarEstado");
-            //req.Method = "POST";
-            //HttpWebResponse res = (HttpWebResponse)req.GetResponse();
-            //StreamReader reader = new StreamReader(res.GetResponseStream());
-            //string resultado = reader.ReadToEnd();
-            //JavaScriptSerializer js = new JavaScriptSerializer();
-            //BEGalleta galleta = js.Deserialize<BEGalleta>(resultado);
-            //Assert.AreEqual(1, galleta.NumeroSuerte);
-            //Assert.AreEqual("es tu numero de la suerte", galleta.Mensaje.Trim());
-            //Assert.AreEqual("luna", galleta.Seudonimo.Trim());
-            string codigo="";
-            string estado="";
-            var postString = new {codigo:"22334455", estado:"1"};
-            byte[] data = UTF8Encoding.UTF8.GetBytes(postString);
- 
-            HttpWebRequest request;
-            request = WebRequest.Create("http://localhost/ejemplo/api") as HttpWebRequest;
-            request.Timeout = 10 * 1000;
-            request.Method = "POST";
-            request.ContentLength = data.Length;
-            request.ContentType = "application/json; charset=utf-8";
+            CreateObject();
+            //if (btnCambio.Text.Equals("Guardar"))
+            //{
 
-
-
-            if (btnCambio.Text.Equals("Guardar"))
-            {
-
-                _bl.NuevoPersonal(_be);
-                ScriptManager.RegisterStartupScript(this.PnlMantenimiento, GetType(), "Script", MessageBox("Grabacion Satisfactoria."), true);
-            }
-            else
-            {
-                _be.id_trabajador = Convert.ToInt16(hdnIdPersonal.Value);
-                _bl.ActualizarPersonal(_be);
-                ScriptManager.RegisterStartupScript(this.PnlMantenimiento, GetType(), "Script", MessageBox("Actualizacion Satisfactoria."), true);
-            }
+            //    _bl.NuevoPersonal(_be);
+            //    ScriptManager.RegisterStartupScript(this.PnlMantenimiento, GetType(), "Script", MessageBox("Grabacion Satisfactoria."), true);
+            //}
+            //else
+            //{
+            //    _be.id_trabajador = Convert.ToInt16(hdnIdPersonal.Value);
+            //    _bl.ActualizarPersonal(_be);
+            //    ScriptManager.RegisterStartupScript(this.PnlMantenimiento, GetType(), "Script", MessageBox("Actualizacion Satisfactoria."), true);
+            //}
 
             listar();
             PnlMantenimiento.Visible = false;
@@ -226,5 +204,44 @@ namespace RRHH
             hdnIdPersonal.Value = "";
             imgFoto.ImageUrl = "";
         }
+
+
+        private static void CreateObject()
+        {
+
+            string URL = "http://181.177.245.11:9595/RRHHIntegration/rest/TrabajadorRS/Trabajador/actualizarEstado";
+            string DATA = @"{""codigoTrabajador"":""22334455"",""flagEstado"":""1""}";
+
+            try
+            {
+                WebRequest request = WebRequest.Create(URL);
+                request.Method = "POST";
+                string postData = DATA;
+                byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(postData);
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = byteArray.Length;
+                Stream dataStream = request.GetRequestStream();
+                dataStream.Write(byteArray, 0, byteArray.Length);
+                dataStream.Close();
+                WebResponse response = request.GetResponse();
+                // Response.Write(((HttpWebResponse)response).StatusDescription); 
+                dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
+                // Response.Write(responseFromServer); 
+                reader.Close();
+                dataStream.Close();
+                response.Close();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+           
+
+        }
+
+        
     }
 }
