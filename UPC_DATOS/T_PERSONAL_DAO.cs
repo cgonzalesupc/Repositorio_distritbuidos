@@ -114,7 +114,6 @@ namespace UPC_DATOS
            }
        }
 
-
        public int Update(T_PERSONAL oBEGeneral)
        {
            using (SqlCommand dbCmd = new SqlCommand("SPU_ACTUALIZAR_PERSONA", SqlClientUPC))
@@ -174,6 +173,42 @@ namespace UPC_DATOS
                    dbCmd.CommandType = CommandType.StoredProcedure;
                    dbCmd.Transaction = trans;
                    dbCmd.Parameters.Add("@ID_TRABAJADOR", SqlDbType.Int).Value = codigo;
+
+                   dbCmd.ExecuteNonQuery();
+                   trans.Commit();
+
+                   return 0;
+               }
+               catch (Exception ex)
+               {
+                   trans.Rollback();
+                   throw ex;
+               }
+               finally
+               {
+                   SqlClientUPC.Close();
+                   SqlClientUPC.Dispose();
+                   trans.Dispose();
+                   dbCmd.Dispose();
+               }
+           }
+       }
+
+
+       public int UpdateTrabajador(string DNI)
+       {
+           using (SqlCommand dbCmd = new SqlCommand("USPU_ACTUALIZAR_TRABAJADOR", SqlClientUPC))
+           {
+               SqlClientUPC.Open();
+               SqlTransaction trans = SqlClientUPC.BeginTransaction(IsolationLevel.ReadCommitted);
+
+               try
+               {
+                   
+                   dbCmd.Transaction = trans;
+                   dbCmd.CommandType = CommandType.StoredProcedure;
+                   dbCmd.Parameters.Add("@DNI", SqlDbType.VarChar).Value = DNI;
+
 
                    dbCmd.ExecuteNonQuery();
                    trans.Commit();

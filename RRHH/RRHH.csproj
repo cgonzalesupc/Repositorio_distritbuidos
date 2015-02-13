@@ -203,6 +203,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="pRACTICANDO.aspx" />
     <Content Include="Styles\EstiloPrincipal.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -229,15 +230,6 @@
     </None>
     <None Include="Service References\WebServicePostulante\TrabajadorWS.wsdl" />
     <None Include="Service References\WebServicePostulante\TrabajadorWSImplService.wsdl" />
-    <None Include="Web References\serviciosUPC\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\serviciosUPC\trabajador.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\serviciosUPC\TrabajadorWS.wsdl" />
-    <None Include="Web References\serviciosUPC\TrabajadorWSImplService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\ChangePassword.aspx.cs">
@@ -299,6 +291,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="pRACTICANDO.aspx.cs">
+      <DependentUpon>pRACTICANDO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pRACTICANDO.aspx.designer.cs">
+      <DependentUpon>pRACTICANDO.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -314,11 +313,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\serviciosUPC\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -365,19 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://distribuidosupc1.jelasticlw.com.br/RRHHIntegration/TrabajadorWSImpl%3fwsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\serviciosUPC\</RelPath>
-      <UpdateFromURL>http://distribuidosupc1.jelasticlw.com.br/RRHHIntegration/TrabajadorWSImpl%3fwsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>RRHH_serviciosUPC_TrabajadorWSImplService</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -51,7 +51,7 @@ namespace RRHH
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-           // ServiceReference2.Service1Client service = new ServiceReference2.Service1Client();
+           
             
             T_TRABAJADORES_DIRECTORY be = new T_TRABAJADORES_DIRECTORY();
             txtNombre.Text = ws.obtenerUno(txtBuscar_DNI.Text).nombres;
@@ -101,8 +101,8 @@ namespace RRHH
             _be.distrito = txtDistrito.Text;
             _be.nro_documento =Convert.ToInt32(txtBuscar_DNI.Text);
             _be.direccion = txtDomicilio.Text;
-
-            CreateObject();
+            string resultado = consumirRest();
+            
             //if (btnCambio.Text.Equals("Guardar"))
             //{
 
@@ -206,40 +206,21 @@ namespace RRHH
         }
 
 
-        private static void CreateObject()
-        {
+       
 
-            string URL = "http://181.177.245.11:9595/RRHHIntegration/rest/TrabajadorRS/Trabajador/actualizarEstado";
-            string DATA = @"{""codigoTrabajador"":""22334455"",""flagEstado"":""1""}";
+        public string consumirRest() {
 
-            try
-            {
-                WebRequest request = WebRequest.Create(URL);
-                request.Method = "POST";
-                string postData = DATA;
-                byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(postData);
-                request.ContentType = "application/x-www-form-urlencoded";
-                request.ContentLength = byteArray.Length;
-                Stream dataStream = request.GetRequestStream();
-                dataStream.Write(byteArray, 0, byteArray.Length);
-                dataStream.Close();
-                WebResponse response = request.GetResponse();
-                // Response.Write(((HttpWebResponse)response).StatusDescription); 
-                dataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(dataStream);
-                string responseFromServer = reader.ReadToEnd();
-                // Response.Write(responseFromServer); 
-                reader.Close();
-                dataStream.Close();
-                response.Close();
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
            
+            HttpWebRequest reqG = (HttpWebRequest)WebRequest
+                           .Create("http://localhost:49525/Service1.svc/Actualizar");
+            reqG.Method = "GET";
+            HttpWebResponse resG = (HttpWebResponse)reqG.GetResponse();
+            StreamReader readerG = new StreamReader(resG.GetResponseStream());
+            string rptaJsonG = readerG.ReadToEnd();
+            JavaScriptSerializer jsG = new JavaScriptSerializer();
+            string rptaObtenidaG = jsG.Deserialize<string>(rptaJsonG);
 
+            return rptaObtenidaG;
         }
 
         

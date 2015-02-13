@@ -31,7 +31,7 @@ namespace UPC_DIRECTORY_SERVICE
             DataSet ObjDataset = new DataSet();
             SqlDataAdapter objAdapater = new SqlDataAdapter();
             SqlCommand objCommand = new SqlCommand
-        ("Select * from T_TRABAJADORES where USUARIO='" + Usuario.ToString() + "' and PASSWORD='" + clave.ToString() + "'");
+            ("Select * from T_TRABAJADORES where USUARIO='" + Usuario.ToString() + "' and PASSWORD='" + clave.ToString() + "'");
             objConnection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["CnnSQL"].ToString();
             objConnection.Open();
             objCommand.Connection = objConnection;
@@ -87,5 +87,8 @@ namespace UPC_DIRECTORY_SERVICE
 
             return composite;
         }
+
+
+
     }
 }

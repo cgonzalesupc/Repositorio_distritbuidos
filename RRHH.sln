@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC_LOGICA", "UPC_LOGICA\UP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC_DIRECTORY_SERVICE", "UPC_DIRECTORY_SERVICE\UPC_DIRECTORY_SERVICE.csproj", "{A4092FE6-3B01-4EF9-A3B8-4FD499A99EDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestService", "RestService\RestService.csproj", "{077148A1-9433-4F0A-86F1-41C665AE0F48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{A4092FE6-3B01-4EF9-A3B8-4FD499A99EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4092FE6-3B01-4EF9-A3B8-4FD499A99EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4092FE6-3B01-4EF9-A3B8-4FD499A99EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077148A1-9433-4F0A-86F1-41C665AE0F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077148A1-9433-4F0A-86F1-41C665AE0F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077148A1-9433-4F0A-86F1-41C665AE0F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077148A1-9433-4F0A-86F1-41C665AE0F48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
